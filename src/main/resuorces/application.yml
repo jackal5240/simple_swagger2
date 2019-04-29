@@ -1,0 +1,6 @@
+spring:
+  key: firstKey
+  value: firstValue
+
+#axiom:
+#  string-value: "from C:/Users/leo/eclipse-workspace/test_swagger2/src/dist/config/axiom.yml"

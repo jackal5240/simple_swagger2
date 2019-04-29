@@ -16,6 +16,30 @@ public class TestController {
 	@ApiOperation(value = "testGet")
 	@GetMapping(value = "/testGet")
 	public String test () {
+		String str = "aaa:bbb:ccc:ddd";
+		String[] tokens = str.split(":");
+		System.out.println("tokens.length == " + tokens.length);
+		for (String token:tokens) {
+			System.out.println(token);
+		}
+		str = "aaa^bbb^ccc^ddd";
+		tokens = str.split("^");
+		System.out.println("tokens.length == " + tokens.length);
+		for (String token:tokens) {
+			System.out.println(token);
+		}
+		str = "aaa^bbb^ccc^ddd";
+		tokens = str.split("\\^");
+		System.out.println("tokens.length == " + tokens.length);
+		for (String token:tokens) {
+			System.out.println(token);
+		}
+		str = "aaa|bbb|ccc|ddd";
+		tokens = str.split("\\|");
+		System.out.println("tokens.length == " + tokens.length);
+		for (String token:tokens) {
+			System.out.println(token);
+		}
 		return "testGet finish";
 	}
 	
@@ -24,6 +48,7 @@ public class TestController {
 //        @ApiImplicitParam(name="ReuestBody", paramType="body", dataType="test_swagger2.api.models.Movie", required=true)})
 	@PostMapping(value = "/testPost")
 	public String test (@RequestBody TestRequest request) {
+		
 		return "testPost finish";
 	}
 }
